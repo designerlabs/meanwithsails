@@ -1,0 +1,7 @@
+<h1>Campaign <div class="rightBtn"><button class="btn btn-md btn-success" ng-click="campaign.add()"><i class="fa fa-plus"></i> Add Campaign</button></div></h1>
+
+<div ng-repeat="job in jobs">{{job.title}}</div>
+
+<input type="text" ng-model="itemId">
+<h1>{{itemId}}</h1>
+<button class="btn btn-md btn-success" ng-click="trigger(itemId)">Trigger</button>
