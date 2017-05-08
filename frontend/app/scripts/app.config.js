@@ -28,10 +28,21 @@ angular.module('yogoApp').config(function($urlRouterProvider, $stateProvider, $h
         templateUrl: '/views/campaign.html',
         controller:'CampaignCtrl'
     })
-    .state('campaignform', {
-        url: '/campaignform',
-        templateUrl: '/views/campaignform.html',
-        controller:'CampaignformCtrl'
+    .state('campaignadd', {
+        url: '/campaignadd',
+        templateUrl: '/views/campaignadd.html',
+        controller:'CampaignaddCtrl'
+    })
+    .state('campaignupdate', {
+        url: '/campaignupdate',
+        templateUrl: '/views/campaignupdate.html',
+       params:      {'index': null},
+        controller:'CampaignupdateCtrl'
+    })
+    .state('campaigndelete', {
+        url: '/campaigndelete',
+        params:      {'index': null},
+        controller:'CampaigndeleteCtrl'
     })
     .state('logout', {
         url: '/logout',
@@ -39,7 +50,7 @@ angular.module('yogoApp').config(function($urlRouterProvider, $stateProvider, $h
     });
 
     $httpProvider.interceptors.push('authInterceptor');
-}).constant('API_URL', 'http://location:3000/')
+}).constant('API_URL', 'http://localhost:3000/')
 .run(function ($window){
     var params = $window.location.search.substring(1);
     if(params && $window.opener && $window.opener.location.origin === $window.location.origin){

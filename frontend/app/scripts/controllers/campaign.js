@@ -32,13 +32,32 @@ angular.module('yogoApp')
     $scope.campaign = {
       add: function(){
         console.log('add');
-         $state.go('campaignform');
+         $state.go('campaignadd');
       },
-      update: function(){
+      update: function(res){
+       
+        $state.go('campaignupdate', { 'index': res});
         console.log('update');
       },
-      delete: function(){
-        console.log('delete');
+      delete: function(res){
+        var url = 'http://localhost:1337/player/'+res;
+        $http.delete(url)
+        .then(function(n){
+          console.log('success');
+          alert('success', 'Deleted!', 'Campaign has been '+n.statusText+'!');
+          //$state.go('campaign');
+          $http.get('http://localhost:1337/player')
+            .then(function(jobs){
+              $scope.jobs = jobs.data;
+               })
+            .catch(function(err){
+              alert('warning', 'Unable to get jobs', err.message);
+            });
+        })
+        .catch(function(err){
+          alert('warning', 'Something went wrong :(', err);
+          console.log(err);
+        })
       }
     }
 
