@@ -1,6 +1,6 @@
 ## MEAN stack with sails js in RaspberryPi
 
-# Simple CRUD system with authentication using NodeJS, Express, AngularJS, MongoDB, SailsJS with JWT (JSON Web Token).
+# Simple CRUD system with authentication using NodeJS, Express, AngularJS, MongoDB, SailsJS, JWT (JSON Web Token).
 
 # Step 1:
 Need to install latest Node, NPM, bower, MongoDB, Sails
@@ -28,4 +28,5 @@ choose the `/frontend` folder, run grunt server using `grunt serve`
 # Step 9: 
 choose the `/sapi` folder, run sails server using `sails lift`
 
-# Step 10: start access the webpage using `http://localhost:9000`
+# Step 10:
+start access the webpage using `http://localhost:9000`
