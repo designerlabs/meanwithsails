@@ -3,7 +3,7 @@
 angular.module('yogoApp')
   .controller('CampaignCtrl', function ($scope, $http, API_URL, alert, $state) {
      var peer = new Peer({key: 'lwjd5qra8257b9'});
-    $http.get('http://localhost:1337/player')
+    $http.get('http://192.168.0.102:1337/player')
     .then(function(jobs){
       $scope.jobs = jobs.data;
       $scope.trigger = function(itemId){
