@@ -176,7 +176,11 @@ body {
 
 
 .rightBtn{
-  display:inline-block;
-  right: 0px;
-  position: absolute;
+  float: right;
+}
+
+.customCard{
+    border-bottom: 1px solid #3d556b;
+    padding: 10px;
+    margin: 10px 0px;
 }

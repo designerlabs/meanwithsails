@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name yogoApp.controller:AddcampaignCtrl
+ * @name yogoApp.controller:CampaignaddCtrl
  * @description
- * # AddcampaignCtrl
+ * # CampaignaddCtrl
  * Controller of the yogoApp
  */
 angular.module('yogoApp')
-  .controller('CampaignformCtrl', function ($scope, $rootScope, $http, alert, authToken, API_URL, $state) {
+  .controller('CampaignaddCtrl', function ($scope, $rootScope, $http, alert, authToken, API_URL, $state, $stateParams) {
     $scope.submit = function(){
 
       var url = 'http://localhost:1337/player/create';
@@ -23,7 +23,7 @@ angular.module('yogoApp')
       $http.post(url, user)
         .then(function(res){
           console.log('success');
-          alert('success', 'Account created!', 'Welcome, '+res+'!');
+          alert('success', 'Success!', 'Campaign has been '+res.statusText+'!');
           $state.go('campaign');
         })
         .catch(function(err){
@@ -31,6 +31,9 @@ angular.module('yogoApp')
           console.log(err);
         })
     };
+
+    var index = $stateParams.index;
+    console.log(index);
   });
 
   
