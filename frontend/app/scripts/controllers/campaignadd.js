@@ -11,7 +11,7 @@ angular.module('yogoApp')
   .controller('CampaignaddCtrl', function ($scope, $rootScope, $http, alert, authToken, API_URL, $state, $stateParams) {
     $scope.submit = function(){
 
-      var url = 'http://localhost:1337/player/create';
+      var url = 'http://designerlabs.ddns.net:1337/player/create';
       var user = {
         user_id: 'email',
         cmgn_name: $scope.campaignName,

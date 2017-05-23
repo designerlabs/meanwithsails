@@ -3,7 +3,7 @@
 angular.module('yogoApp')
   .controller('CampaignCtrl', function ($scope, $http, API_URL, alert, $state) {
      var peer = new Peer({key: 'lwjd5qra8257b9'});
-    $http.get('http://192.168.0.102:1337/player')
+    $http.get('http://designerlabs.ddns.net:1337/player')
     .then(function(jobs){
       $scope.jobs = jobs.data;
       $scope.trigger = function(itemId){
@@ -40,13 +40,13 @@ angular.module('yogoApp')
         console.log('update');
       },
       delete: function(res){
-        var url = 'http://localhost:1337/player/'+res;
+        var url = 'http://designerlabs.ddns.net:1337/player/'+res;
         $http.delete(url)
         .then(function(n){
           console.log('success');
           alert('success', 'Deleted!', 'Campaign has been '+n.statusText+'!');
           //$state.go('campaign');
-          $http.get('http://localhost:1337/player')
+          $http.get('http://designerlabs.ddns.net:1337/player')
             .then(function(jobs){
               $scope.jobs = jobs.data;
                })
