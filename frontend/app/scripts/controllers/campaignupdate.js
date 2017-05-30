@@ -12,7 +12,7 @@ angular.module('yogoApp')
 
      var index = $stateParams.index;
    
-     $http.get('http://designerlabs.ddns.net:1337/player/'+index)
+     $http.get('http://localhost:1337/player/'+index)
     .then(function(jobs){
       $scope.campaignName = jobs.data.cmgn_name;
       $scope.campaignDesc = jobs.data.cmgn_desc;
@@ -24,7 +24,7 @@ angular.module('yogoApp')
 
     $scope.submit = function(){
 
-      var url = 'http://designerlabs.ddns.net:1337/player/'+index;
+      var url = 'http://localhost:1337/player/'+index;
       var user = {
         user_id: 'email',
         cmgn_name: $scope.campaignName,
