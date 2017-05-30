@@ -50,7 +50,7 @@ angular.module('yogoApp').config(function($urlRouterProvider, $stateProvider, $h
     });
 
     $httpProvider.interceptors.push('authInterceptor');
-}).constant('API_URL', 'localhost:3000/')
+}).constant('API_URL', 'http://localhost:3000/')
 .run(function ($window){
     var params = $window.location.search.substring(1);
     if(params && $window.opener && $window.opener.location.origin === $window.location.origin){
